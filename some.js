@@ -15,6 +15,8 @@ var relBoton = (function () {
 		for (p in obj) {
 			nod.innerHTML = obj[p];
 		}
+		var pattern = /yourname/;
+		nod.innerHTML = nod.innerHTML.replace(pattern, relHidAlias.alia.val());
 		nod.innerHTML += "<br>" + "Now, go fuck yourself!";
 		nod.style.display = "none";
 		nod.style.top = nod.style.top + 325+ "px";
@@ -33,6 +35,7 @@ var relBoton = (function () {
 				req.send(null);
 				console.log(req.responseText);
 				var caru = $(priv_eval(elemento));
+
 				setTimeout(function () {
 					caru.fadeIn(3000);
 				}, 500);
@@ -66,7 +69,9 @@ var relHidAlias = (function () {
 			});}, 500);
 		}),
 
-		hidden: hid
+		hidden: hid,
+
+		alia: alias
 	}
 })();
 
